@@ -1,0 +1,25 @@
+{
+	"name": "hs_sales_platform",
+	"version": "1.0.0",
+	"description": "湖山公司的销售平台",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/xhx881221/HS.Sales-Platform.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/xhx881221/HS.Sales-Platform/issues"
+	},
+	"homepage": "https://github.com/xhx881221/HS.Sales-Platform#readme",
+	"devDependencies": {
+		"webpack": "^4.42.1",
+		"webpack-cli": "^3.3.11"
+	}
+}
