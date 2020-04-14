@@ -39,10 +39,13 @@ const configs = {
                             }
                         }
                     }
+                ],
+                include: [
+                    path.resolve(__dirname, '../node_modules/element-ui/lib/theme-chalk')
                 ]
             },
             {
-                test: /.\js$/,
+                test: /\.js$/,
                 use: [
                     {
                         loader: 'babel-loader',
@@ -55,11 +58,15 @@ const configs = {
                                         "corejs": 3
                                     }
                                 ]
-                            ]
+                            ],
+                            cacheDirectory: true
                         }
                     }
                 ],
-                exclude: /node_modules/
+                include: [
+                    path.resolve(__dirname, '../src'),
+                    path.resolve(__dirname, '../mock')
+                ]
             },
             {
                 test: /\.(png|jpg|gif|jpeg|webp|svg)$/,
@@ -73,7 +80,8 @@ const configs = {
                             outputPath: 'img'
                         }
                     }
-                ]
+                ],
+                include: []
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
@@ -87,12 +95,17 @@ const configs = {
                             outputPath: 'fonts'
                         }
                     }
+                ],
+                include: [
+                    path.resolve(__dirname, '../node_modules/element-ui/lib/theme-chalk/fonts')
                 ]
             },
             {
                 test: /\.vue$/,
                 use: 'vue-loader',
-                exclude: /node_modules/
+                include: [
+                    path.resolve(__dirname, '../src')
+                ]
             }
         ]
     },
@@ -100,13 +113,39 @@ const configs = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            filename: 'index.html'
+            filename: 'index.html',
+            minify: {
+                collapseWhitespace: false,
+            }
         }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css'
         })
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendors: {
+                    priority: 1,
+                    name: 'vendors',
+                    test: /node_modules/,
+                    chunks: 'initial',
+                    minSize: 100,
+                    minChunks: 1
+                },
+                common: {
+                    chunks: 'initial',
+                    name: 'common',
+                    minSize: 100,
+                    minChunks: 3
+                }
+            }
+        },
+        runtimeChunk: {
+            name: 'manifest'
+        }
+    }
 }
 
 module.exports = configs;
