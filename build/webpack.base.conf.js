@@ -11,7 +11,7 @@ const configs = {
         main: './src/main.js'
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[name].[hash:6].js',
         path: path.resolve(__dirname, '../dist')
     },
     module: {
@@ -81,7 +81,9 @@ const configs = {
                         }
                     }
                 ],
-                include: []
+                include: [
+                    path.resolve(__dirname, '../src/assets/images')
+                ]
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
