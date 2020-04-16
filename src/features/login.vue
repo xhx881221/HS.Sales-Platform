@@ -1,8 +1,7 @@
 <template>
     <div id="login">
         <div class="login-dialog" @keyup.enter="login">
-            <img src="../assets/images/login-background.png">
-            <h1>{{$t("Message.LoginTitle")}}</h1>
+            <!-- <h1>{{$t("Message.LoginTitle")}}</h1>
 
             <el-input :placeholder="$t('Table.Username')" v-model="username" class="login-input username-input">
                 <template slot="prepend">
@@ -18,7 +17,7 @@
 
             <el-button class="login-input login-button" type="primary" @click="login">
                 {{$t("Button.Login")}}
-            </el-button>
+            </el-button> -->
         </div>
     </div>
 </template>
@@ -69,11 +68,10 @@
 
 <style scoped>
     #login {
-        background: url("./assets/logo-background.png");
+        background: url("../assets/images/login-background.png");
         background-size: 1920px 969px;
         height: 100%;
         width: 100%;
-        background-color:#178BFE;
     }
 
     .login-dialog {

@@ -19,15 +19,12 @@ const configs = {
             {
                 test: /\.css$/,
                 use: [
+                    isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                     {
-                        loader: MiniCssExtractPlugin.loader,
+                        loader: 'css-loader',
                         options: {
-                            hmr: isDev,
-                            reloadAll: true
+                            importLoaders: 1
                         }
-                    },
-                    {
-                        loader: 'css-loader'
                     },
                     {
                         loader: 'postcss-loader',
@@ -41,7 +38,8 @@ const configs = {
                     }
                 ],
                 include: [
-                    path.resolve(__dirname, '../node_modules/element-ui/lib/theme-chalk')
+                    path.resolve(__dirname, '../node_modules/element-ui/lib/theme-chalk'),
+                    path.resolve(__dirname, '../src')
                 ]
             },
             {

@@ -1,18 +1,30 @@
 import Vue from 'vue';
-import { Button, Select } from 'element-ui';
+import Vuex from 'vuex';
+import { Button, Select, Loading } from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import router from './router.js';
 import i18n from './locales';
-import App from './App.vue';
+import app from './App.vue';
+import store from './store/index';
 import AXIOS_INSTANCE from './request/http.js';
+import * as filters from './util/filter';
 
+Vue.use(Vuex);
 Vue.use(Button);
 Vue.use(Select);
+Vue.use(Loading.directive);
 
-new Vue({
+Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
+
+var vm = new Vue({
     i18n,
     router,
-    render: h => h(App)
-}).$mount('#app');
+    store,
+    render: h => h(app)
+});
+
+Vue.prototype.$axios = AXIOS_INSTANCE;
+vm.$mount('#app')
 
 if (module && module.hot) {
     module.hot.accept();

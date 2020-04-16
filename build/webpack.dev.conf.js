@@ -7,6 +7,7 @@ const baseWebpackConfig = require('./webpack.base.conf');
 const configs = {
     devtool: 'cheap-module-eval-source-map',
     devServer: {
+        open: true,
         hot: true,
         port: "3000",
         overlay: true,

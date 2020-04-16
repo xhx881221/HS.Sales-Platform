@@ -9,6 +9,7 @@ import axios from 'axios';
 import router from '../router.js'
 import store from '../store/index';
 import { Message } from 'element-ui';
+import url from '../config.js';
 let messageCanAppear = true;
 
 const toLogin = () => {
@@ -59,6 +60,7 @@ let timeout;
 AXIOS_INSTANCE.defaults.timeout = 60000;
 //设置post请求头
 AXIOS_INSTANCE.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+AXIOS_INSTANCE.defaults.baseURL = process.env.NODE_ENV === 'production' ? url.prod : url.dev;
 /*
     AXIOS_INSTANCE.defaults.headers = {
         "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
