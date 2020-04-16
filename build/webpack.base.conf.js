@@ -19,7 +19,18 @@ const configs = {
             {
                 test: /\.css$/,
                 use: [
-                    isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+                    isDev ? 
+                    {
+                        loader: 'vue-style-loader',
+                        options: {
+                            publicPath: '../'
+                        }
+                    } : {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../'
+                        }
+                    },
                     {
                         loader: 'css-loader',
                         options: {

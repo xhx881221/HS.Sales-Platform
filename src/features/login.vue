@@ -68,7 +68,7 @@
 
 <style scoped>
     #login {
-        background: url("../assets/images/login-background.png");
+        background-image: url("../assets/images/login-background.jpg");
         background-size: 1920px 969px;
         height: 100%;
         width: 100%;
