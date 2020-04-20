@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { Input, Button, Select, Loading } from 'element-ui';
+import { Input, Button, Select, Loading, Icon } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import router from './router.js';
 import i18n from './locales';
@@ -13,6 +13,7 @@ Vue.use(Vuex);
 Vue.use(Input);
 Vue.use(Button);
 Vue.use(Select);
+Vue.use(Icon);
 Vue.use(Loading.directive);
 
 Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));

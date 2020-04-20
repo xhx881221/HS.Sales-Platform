@@ -9,13 +9,13 @@
 
             <el-input :placeholder="$t('Message.Username')" v-model="username" class="login-input username-input">
                 <template slot="prepend">
-                    <i class="fa fa-user fa-2x fa-fw" aria-hidden="true"></i>
+                    <i class="el-icon-user"></i>
                 </template>
             </el-input>
 
             <el-input :placeholder="$t('Message.Password')" v-model="password" show-password class="login-input password-input">
                 <template slot="prepend">
-                    <i class="fa fa-unlock-alt fa-2x fa-fw" aria-hidden="true"></i>
+                    <i class="el-icon-lock"></i>
                 </template>
             </el-input>
 
@@ -65,8 +65,24 @@
     }
 
     #login .el-input__inner {
-        height: 56px;
-        line-height: 56px;
+        height: 80px;
+        line-height: 80px;
+        border: none;
+    }
+
+    #login [class^=el-icon-] {
+        font-size: 30px;
+    }
+
+    #login .el-input-group__prepend {
+        padding: 20px 20px 20px 10px;
+        background-color: #ffffff;
+        color: #4E93FD;
+        border: none;
+    }
+
+    #login .el-button.is-round {
+        border-radius: 33px;
     }
 </style>
 
@@ -121,13 +137,22 @@
 
     .username-input {
         top: 252px;
+        border-bottom: 2px solid #EEEEEE;
     }
 
     .password-input {
         top: 364px;
+        border-bottom: 2px solid #EEEEEE;
+    }
+    
+    .username-input:focus-within, .password-input:focus-within {
+        border-bottom: 2px solid #4EA3FF;
     }
 
     .login-button {
         top: 506px;
+        height: 66px;
+        width: 320px;
+        font-size: 28px;
     }
 </style>
