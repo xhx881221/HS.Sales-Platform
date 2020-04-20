@@ -19,7 +19,7 @@ html {
 body {
     position: relative;
     font-size: 14px;
-    font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: "Source Han Sans CN", Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     background: #fff;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;

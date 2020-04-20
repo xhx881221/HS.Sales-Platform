@@ -19,7 +19,8 @@
 </script>
 
 <style>
-	@import "styles/reset.css";
+	@import "./styles/reset.css";
+	@import "./assets/font/font-awesome/font-awesome.css";
 </style>
 
 <style scoped>

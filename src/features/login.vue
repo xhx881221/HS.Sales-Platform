@@ -1,23 +1,27 @@
 <template>
     <div id="login">
         <div class="login-dialog" @keyup.enter="login">
-            <!-- <h1>{{$t("Message.LoginTitle")}}</h1>
+            <img src="../assets/images/login-illustration.png"/>
 
-            <el-input :placeholder="$t('Table.Username')" v-model="username" class="login-input username-input">
+            <h1>{{$t("Message.LoginTitle")}}</h1>
+
+            <h5>{{$t("Message.LoginSubtitle")}}</h5>
+
+            <el-input :placeholder="$t('Message.Username')" v-model="username" class="login-input username-input">
                 <template slot="prepend">
                     <i class="fa fa-user fa-2x fa-fw" aria-hidden="true"></i>
                 </template>
             </el-input>
 
-            <el-input :placeholder="$t('Table.Password')" v-model="password" show-password class="login-input password-input">
+            <el-input :placeholder="$t('Message.Password')" v-model="password" show-password class="login-input password-input">
                 <template slot="prepend">
                     <i class="fa fa-unlock-alt fa-2x fa-fw" aria-hidden="true"></i>
                 </template>
             </el-input>
 
-            <el-button class="login-input login-button" type="primary" @click="login">
+            <el-button class="login-input login-button" type="primary" @click="login" round>
                 {{$t("Button.Login")}}
-            </el-button> -->
+            </el-button>
         </div>
     </div>
 </template>
@@ -76,46 +80,54 @@
 
     .login-dialog {
         position: relative;
-        width: 580px; height: 520px;
-        top: 200px;
-        left: calc((100% - 580px) / 2);
-        background-color: rgb(227, 240, 253);
-        border: 1px solid rgba(136,194,255,1);
-        border-radius: 2px;
+        width: 1200px; height: 700px;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0px 0px 10px #0C4EF4;
     }
 
     .login-dialog img {
         position: absolute;
-        top: 64px; left: 62px;
-        width: 66px; height: 39px;
+        top: 30px; left: 70px;
+        width: 510px; height: 640px;
     }
 
     .login-dialog h1 {
         position: absolute;
-        top: 72px;
-        left: 132px;
-        color: #338FF1;
-        font-size: 26px;
-        font-weight: 600;
-        letter-spacing: 0.2em;
+        top: 120px;
+        left: 656px;
+        color: #333333;
+        font-size: 44px;
+        font-weight: 400;
+    }
+
+    .login-dialog h5 {
+        position: absolute;
+        top: 182px;
+        left: 656px;
+        color: #A9A9A9;
+        font-size: 18px;
+        font-weight: 400;
     }
 
     .login-input {
         position: absolute;
-        left: 60px;
-        width: calc(100% - 60px - 60px);
-        height: 56px;
+        left: 656px;
+        width: 360px;
+        height: 80px;
     }
 
     .username-input {
-        top: 160px;
+        top: 252px;
     }
 
     .password-input {
-        top: 250px;
+        top: 364px;
     }
 
     .login-button {
-        top: 360px;
+        top: 506px;
     }
 </style>

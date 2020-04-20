@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
 const configs = {
@@ -34,7 +35,13 @@ const configs = {
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 1
+                            importLoaders: 1,
+                            url: (url, resoucePath) => {
+                                if (url.includes('.eot?') || url.includes('.ttf?') || url.includes('.woff?') || url.includes('.woff2?') || url.includes('.svg?')) {
+                                    return false;
+                                }
+                                return true;
+                            }
                         }
                     },
                     {
@@ -78,6 +85,23 @@ const configs = {
                 ]
             },
             {
+                test: /\.(eot|ttf|woff|woff2)(\?.*)?$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            limit: 10240,
+                            fallback: 'file-loader',
+                            outputPath: 'fonts'
+                        }
+                    }
+                ],
+                include: [
+                    path.resolve(__dirname, '../node_modules/element-ui/lib/theme-chalk/fonts')
+                ]
+            },
+            {
                 test: /\.(png|jpg|gif|jpeg|webp|svg)$/,
                 use: [
                     {
@@ -92,23 +116,6 @@ const configs = {
                 ],
                 include: [
                     path.resolve(__dirname, '../src/assets/images')
-                ]
-            },
-            {
-                test: /\.(eot|ttf|woff|woff2)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10240,
-                            esModule: false,
-                            fallback: 'file-loader',
-                            outputPath: 'fonts'
-                        }
-                    }
-                ],
-                include: [
-                    path.resolve(__dirname, '../node_modules/element-ui/lib/theme-chalk/fonts')
                 ]
             },
             {
@@ -132,7 +139,14 @@ const configs = {
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css'
-        })
+        }),
+        new CopyPlugin([
+            { 
+                from: './src/assets/font/font-awesome/',
+                to: path.resolve(__dirname, '../dist', 'fonts'),
+                ignore: ['*.css']
+            }
+        ])
     ],
     optimization: {
         splitChunks: {

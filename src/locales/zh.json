@@ -12,9 +12,13 @@
 
     },
     "Button": {
-        
+        "Login": "登录"
     },
     "Message": {
-        "DesperatelyLoading": "拼命加载中"
+        "DesperatelyLoading": "拼命加载中",
+        "LoginTitle": "电声销售数据分析系统",
+        "LoginSubtitle": "一款让数据更加清楚简洁的系统",
+        "Username": "请输入用户登录名",
+        "Password": "请输入登录密码"
     }
 }
