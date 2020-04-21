@@ -1,9 +1,14 @@
 {
     "Title": {
-        
+        "Title": "电声销售分析系统"
     },
     "Function": {
-        
+        "DataEntry": "数据录入",
+        "SectorManagement": "板块管理",
+        "AreaManagement": "区域管理",
+        "UserManagement": "用户管理",
+        "ReportQuery": "报表查询",
+        "ProductSettings": "产品设置"
     },
     "Form": {
         
@@ -12,7 +17,8 @@
 
     },
     "Button": {
-        "Login": "登录"
+        "Login": "登录",
+        "SignOut": "登出"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",

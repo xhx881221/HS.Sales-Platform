@@ -43,7 +43,7 @@
 		     */
             login () {
                 let _self = this;
-                this.$axios.post('/api/User/Login', {
+                this.$axios.post('/api/Auth/Login', {
                     loginName: _self.username,
                     password: _self.password
                 }).then((response) => {
