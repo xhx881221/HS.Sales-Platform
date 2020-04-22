@@ -109,6 +109,17 @@
 		background-color: #1F447F;
 		border-right: 3px solid #1F447F;
 	}
+
+	.el-button--medium {
+		padding: 10px 14px;
+	}
+
+	.el-button--primary:focus,
+	.el-button--primary:hover {
+		background: #ffffff;
+		border-color: #66b1ff;
+		color: #66b1ff;
+	}
 </style>
 
 <style scoped>
@@ -169,6 +180,6 @@
 		width: calc(100% - 130px);
 		height: calc(100% - 76px);
 		overflow: hidden;
-		background-color: #e5e5e5;
+		background-color: #F5F6F9;
 	}
 </style>

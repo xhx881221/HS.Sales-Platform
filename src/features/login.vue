@@ -47,7 +47,7 @@
                     loginName: _self.username,
                     password: _self.password
                 }).then((response) => {
-                    const AUTH_TOKEN = "Bearer " + response.data.data;
+                    const AUTH_TOKEN = "Bearer " + response.token;
                     sessionStorage.setItem('token', AUTH_TOKEN);
                     sessionStorage.setItem('username', _self.username);
                     _self.$router.push('home');

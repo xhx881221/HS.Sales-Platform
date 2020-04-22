@@ -96,7 +96,7 @@ AXIOS_INSTANCE.interceptors.response.use(
         store.commit('setLoading', false);
         store.commit('setLoadingFlag', false);
         if (response.status === 200 && response.data.success) {
-            return Promise.resolve(response);
+            return Promise.resolve(response.data.data);
         } else if (response.status === 200 && !response.data.success) {
             if (!messageCanAppear) {
                 return Promise.reject(response);

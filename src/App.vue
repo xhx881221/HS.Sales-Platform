@@ -20,6 +20,7 @@
 
 <style>
 	@import "./styles/reset.css";
+	@import "./styles/public.css";
 	@import "./assets/font/font-awesome/font-awesome.css";
 </style>
 

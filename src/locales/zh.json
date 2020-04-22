@@ -18,7 +18,9 @@
     },
     "Button": {
         "Login": "登录",
-        "SignOut": "登出"
+        "SignOut": "登出",
+        "IncreaseSector": "增加板块",
+        "DeleteSector": "删除板块"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",
