@@ -7,6 +7,7 @@ const routes = [
         path: '/home', component: (resolve) => require(['./features/home.vue'], resolve), children: [
             { path: '/', alias: '/dataEntry', component: (resolve) => require(['./features/dataEntry.vue'], resolve) },
             { path: '/sectorManagement', component: (resolve) => require(['./features/sectorManagement.vue'], resolve) },
+            { path: '/seriesManagement', name: 'SeriesManagement', component: (resolve) => require(['./features/seriesManagement.vue'], resolve) },
             { path: '/areaManagement', component: (resolve) => require(['./features/areaManagement.vue'], resolve) },
             { path: '/userManagement', component: (resolve) => require(['./features/userManagement.vue'], resolve) },
             { path: '/reportQuery', component: (resolve) => require(['./features/reportQuery.vue'], resolve) },

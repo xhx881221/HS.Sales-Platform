@@ -1,6 +1,8 @@
 {
     "Title": {
-        "Title": "电声销售分析系统"
+        "Title": "电声销售分析系统",
+        "AddSector": "增加板块",
+        "EditSector": "编辑板块"
     },
     "Function": {
         "DataEntry": "数据录入",
@@ -8,10 +10,11 @@
         "AreaManagement": "区域管理",
         "UserManagement": "用户管理",
         "ReportQuery": "报表查询",
-        "ProductSettings": "产品设置"
+        "ProductSettings": "产品设置",
+        "ConfirmationInformation": "确认信息"
     },
     "Form": {
-        
+        "SectorName": "板块名称："
     },
     "Table": {
 
@@ -19,14 +22,24 @@
     "Button": {
         "Login": "登录",
         "SignOut": "登出",
-        "IncreaseSector": "增加板块",
-        "DeleteSector": "删除板块"
+        "AddSector": "增加板块",
+        "DeleteSector": "删除板块",
+        "Edit": "编辑",
+        "SeriesEdit": "系列编辑",
+        "Save": "保存",
+        "Determine": "确定",
+        "GiveUpDelete": "取消",
+        "BackToSector": "返回板块"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",
         "LoginTitle": "电声销售数据分析系统",
         "LoginSubtitle": "一款让数据更加清楚简洁的系统",
         "Username": "请输入用户登录名",
-        "Password": "请输入登录密码"
+        "Password": "请输入登录密码",
+        "PleaseEnterTheName": "请输入名称",
+        "SuccessfullySaved": "保存成功",
+        "PleaseConfirmWhetherToDelete": "请确定是否删除?",
+        "SuccessfullyDeleted": "删除成功"
     }
 }
