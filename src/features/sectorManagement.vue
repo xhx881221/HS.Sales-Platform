@@ -15,9 +15,9 @@
                                 <div class="sector-select"></div>
                                 <div :class="{ selected: selectedIds.indexOf(sector.id) !== -1 }"></div>
 
-                                <div class="sector-name" :selfTooptip="sector.name" effect="dark" placement="top-left" :disabled="sector.name.length >= 9">
-                                    <span>{{sector.name | omitContent(9)}}</span>
-                                </div>
+                                <el-tooltip :content="sector.name" placement="top" :disabled="sector.name.length <= 11">
+                                    <div class="sector-name">{{sector.name | omitContent(11)}}</div>
+                                </el-tooltip>
                                 
                                 <img class="sector-image" src="../assets/images/sector-image.png" style="width: 120px; height: 130px">
 
@@ -158,14 +158,15 @@
                         this.selectedIds.splice(index, 1);
                     } else {
                         this.selectedIds.push(id);
-                }
+                    }
                 }
             },
             editSeries(obj) {
                 this.$router.push({
                     name: "SeriesManagement",
-                    params: {
-                        sectorName: obj.name
+                    query: {
+                        sectorName: obj.name,
+                        sectorId: obj.id
                     }
                 })
             },
@@ -245,11 +246,11 @@
     .container .sector-name {
         position: absolute;
         top: 64px;
-        left: 50%;
-        transform: translateX(-50%);
         color: #454545;
         font-size: 28px;
-        font-weight: 500px;
+        font-weight: 500;
+        width: 100%;
+        text-align: center;
     }
 
     .container .sector-image {

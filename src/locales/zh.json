@@ -2,7 +2,9 @@
     "Title": {
         "Title": "电声销售分析系统",
         "AddSector": "增加板块",
-        "EditSector": "编辑板块"
+        "EditSector": "编辑板块",
+        "AddSerie": "增加系列",
+        "EditSerie": "编辑系列"
     },
     "Function": {
         "DataEntry": "数据录入",
@@ -14,7 +16,8 @@
         "ConfirmationInformation": "确认信息"
     },
     "Form": {
-        "SectorName": "板块名称："
+        "SectorName": "板块名称：",
+        "SerieName": "系列名称："
     },
     "Table": {
 
@@ -29,7 +32,12 @@
         "Save": "保存",
         "Determine": "确定",
         "GiveUpDelete": "取消",
-        "BackToSector": "返回板块"
+        "BackToSector": "返回板块",
+        "AddSerie": "增加系列",
+        "DeleteSerie": "删除系列",
+        "EditSerie": "编辑系列",
+        "Add": "新增",
+        "Delete": "删除"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",
@@ -40,6 +48,7 @@
         "PleaseEnterTheName": "请输入名称",
         "SuccessfullySaved": "保存成功",
         "PleaseConfirmWhetherToDelete": "请确定是否删除?",
-        "SuccessfullyDeleted": "删除成功"
+        "SuccessfullyDeleted": "删除成功",
+        "Series": "系列"
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div>
-            <span class="title">{{title}}</span>
+            <h2 class="title">{{title}}</h2>
         </div>
 
         <el-button size="medium" icon="el-icon-refresh-left" v-if="button" class="header-button" @click="goback">{{button.name}}</el-button>
@@ -46,6 +46,7 @@
 
     .title {
         font-size: 18px;
+        font-weight: normal;
         color: #000000;
         line-height: 56px;
         margin-left: 36px;
