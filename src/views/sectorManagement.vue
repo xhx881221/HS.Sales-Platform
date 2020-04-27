@@ -50,10 +50,12 @@
 </template>
 
 <script>
-    import contentHeader from '../components/ContentHeader.vue'
+    import contentHeader from '../components/ContentHeader.vue';
+    import { userMixin } from "../mixins/userMixins";
 
     export default {
         name: 'sectorManagement',
+        mixins: [userMixin],
         components: {
             contentHeader
         },
@@ -70,15 +72,13 @@
                     id: "",
                     comment: "",
                     name: ""
-                },
-                sectorFormRules: {
-                    name: [{required: true, message: this.$t("Message.PleaseEnterTheName"), trigger: ['blur', 'change']}]
-                },
+                }
             }
         },
         methods: {
             addSector() {
                 this.dialog.title = this.$t("Title.AddSector");
+                this.sectorForm.id = "";
                 this.dialog.visible = true;
                 this.dialog.mode = "Add";
             },

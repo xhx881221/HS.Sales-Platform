@@ -4,7 +4,9 @@
         "AddSector": "增加板块",
         "EditSector": "编辑板块",
         "AddSerie": "增加系列",
-        "EditSerie": "编辑系列"
+        "EditSerie": "编辑系列",
+        "Add": "新增",
+        "Edit": "编辑"
     },
     "Function": {
         "DataEntry": "数据录入",
@@ -17,10 +19,19 @@
     },
     "Form": {
         "SectorName": "板块名称：",
-        "SerieName": "系列名称："
+        "SerieName": "系列名称：",
+        "ModelCode": "型号代码: ",
+        "Name": "名称：",
+        "Price": "价格：",
+        "Remarks": "备注：",
+        "Unit": "单位："
     },
     "Table": {
-
+        "ModelCode": "型号代码",
+        "Name": "名称",
+        "Price": "价格",
+        "Remarks": "备注",
+        "Unit": "单位"
     },
     "Button": {
         "Login": "登录",
@@ -46,6 +57,9 @@
         "Username": "请输入用户登录名",
         "Password": "请输入登录密码",
         "PleaseEnterTheName": "请输入名称",
+        "PleaseEnterTheCode": "请输入代码",
+        "PleaseEnterTheCorrectPrice": "请输入正确的价格",
+        "PleaseEnterTheCorrectUnit": "请输入正确的单位",
         "SuccessfullySaved": "保存成功",
         "PleaseConfirmWhetherToDelete": "请确定是否删除?",
         "SuccessfullyDeleted": "删除成功",

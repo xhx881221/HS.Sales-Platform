@@ -92,7 +92,6 @@ AXIOS_INSTANCE.interceptors.request.use(
 
 AXIOS_INSTANCE.interceptors.response.use(
     response => {
-        console.log(response);
         clearTimeout(timeout);
         store.commit('setLoading', false);
         store.commit('setLoadingFlag', false);
@@ -116,7 +115,6 @@ AXIOS_INSTANCE.interceptors.response.use(
         }
     },
     error => {
-        console.log(error);
         clearTimeout(timeout);
         const { response } = error;
         store.commit('setLoading', false);

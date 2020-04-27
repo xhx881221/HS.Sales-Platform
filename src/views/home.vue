@@ -114,11 +114,43 @@
 		padding: 10px 14px;
 	}
 
+	.el-button--primary {
+		color: #ffffff;
+		background-color: #4EA3FF;
+		border-color: #4EA3FF;
+	}
+
 	.el-button--primary:focus,
 	.el-button--primary:hover {
 		background: #ffffff;
-		border-color: #66b1ff;
-		color: #66b1ff;
+		border-color: #4EA3FF;
+		color: #4EA3FF;
+	}
+
+	.el-button--success {
+		color: #ffffff;
+		background-color: #49BF89;
+		border-color: #49BF89;
+	}
+
+	.el-button--success:focus,
+	.el-button--success:hover {
+		background: #ffffff;
+		border-color: #49BF89;
+		color: #49BF89;
+	}
+
+	.el-button--danger {
+		color: #ffffff;
+		background-color: #FE4F4F;
+		border-color: #FE4F4F;
+	}
+
+	.el-button--danger:focus,
+	.el-button--danger:hover {
+		background: #ffffff;
+		border-color: #FE4F4F;
+		color: #FE4F4F;
 	}
 
 	.v-modal {
