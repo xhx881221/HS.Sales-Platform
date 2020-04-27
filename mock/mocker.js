@@ -1,56 +1,11 @@
 module.exports = {
-    'GET /api/Plate/GetAll': (req, res) => {
-        return res.send({
+    'POST /api/Test/Login': (req, res) => {
+        return res.json({
             status: 'ok',
             code: 200,
-            data: [
-                {
-                    id: "1",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                },
-                {
-                    id: "2",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                },
-                {
-                    id: "3",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                },
-                {
-                    id: "4",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                },
-                {
-                    id: "5",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                },
-                {
-                    id: "6",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                },
-                {
-                    id: "7",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                },
-                {
-                    id: "8",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                },
-                {
-                    id: "9",
-                    name: "测试板块1",
-                    comment: "测试板块1"
-                }
-        
-            ]
+            data: {
+                test: "测试数据啦"
+            }
         })
     },
     'POST /login/account': (req, res) => {

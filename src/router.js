@@ -2,16 +2,16 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 const routes = [
-    { path: '/', alias: '/login', component: (resolve) => require(['./features/login.vue'], resolve) },
+    { path: '/', alias: '/login', component: (resolve) => require(['./views/login.vue'], resolve) },
     { 
-        path: '/home', component: (resolve) => require(['./features/home.vue'], resolve), children: [
-            { path: '/', alias: '/dataEntry', component: (resolve) => require(['./features/dataEntry.vue'], resolve) },
-            { path: '/sectorManagement', component: (resolve) => require(['./features/sectorManagement.vue'], resolve) },
-            { path: '/seriesManagement', name: 'SeriesManagement', component: (resolve) => require(['./features/seriesManagement.vue'], resolve) },
-            { path: '/areaManagement', component: (resolve) => require(['./features/areaManagement.vue'], resolve) },
-            { path: '/userManagement', component: (resolve) => require(['./features/userManagement.vue'], resolve) },
-            { path: '/reportQuery', component: (resolve) => require(['./features/reportQuery.vue'], resolve) },
-            { path: '/productSettings', component: (resolve) => require(['./features/productSettings.vue'], resolve) }
+        path: '/home', component: (resolve) => require(['./views/home.vue'], resolve), children: [
+            { path: '/', alias: '/dataEntry', component: (resolve) => require(['./views/dataEntry.vue'], resolve) },
+            { path: '/sectorManagement', component: (resolve) => require(['./views/sectorManagement.vue'], resolve) },
+            { path: '/seriesManagement', name: 'SeriesManagement', component: (resolve) => require(['./views/seriesManagement.vue'], resolve) },
+            { path: '/areaManagement', component: (resolve) => require(['./views/areaManagement.vue'], resolve) },
+            { path: '/userManagement', component: (resolve) => require(['./views/userManagement.vue'], resolve) },
+            { path: '/reportQuery', component: (resolve) => require(['./views/reportQuery.vue'], resolve) },
+            { path: '/productSettings', component: (resolve) => require(['./views/productSettings.vue'], resolve) }
         ]
     }
 ];

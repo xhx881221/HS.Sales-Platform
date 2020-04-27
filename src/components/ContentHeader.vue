@@ -11,7 +11,18 @@
 <script>
     export default {
         name: "ContentHeader",
-        props: ["title", "button"],
+        props: {
+            title: {
+                type: String,
+                required: true
+            },
+            button: {
+                type: [Object, Boolean],
+                default: function() {
+                    return false;
+                }
+            }
+        },
         methods: {
             goback() {
                 this.$emit('goback');
