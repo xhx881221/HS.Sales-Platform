@@ -6,7 +6,17 @@
         "AddSerie": "增加系列",
         "EditSerie": "编辑系列",
         "Add": "新增",
-        "Edit": "编辑"
+        "Edit": "编辑",
+        "Summary": "综述",
+        "OutstandingProducts": "绩优产品",
+        "EarlyWarning": "预警",
+        "RegionalSales": "区域销售",
+        "SystemSales": "系统销售",
+        "ProductSales": "产品销售",
+        "SalesCompany": "销售公司",
+        "Top20": "前20",
+        "Last30": "后30",
+        "ChangePassword": "修改密码"
     },
     "Function": {
         "DataEntry": "数据录入",
@@ -24,18 +34,23 @@
         "Name": "名称：",
         "Price": "价格：",
         "Remarks": "备注：",
-        "Unit": "单位："
+        "Unit": "单位：",
+        "OriginalPassword": "原有密码：",
+        "NewPassword": "新密码：",
+        "ConfirmPassword": "确认新密码："
     },
     "Table": {
         "ModelCode": "型号代码",
         "Name": "名称",
         "Price": "价格",
         "Remarks": "备注",
-        "Unit": "单位"
+        "Unit": "单位",
+        "FullName": "姓名"
     },
     "Button": {
         "Login": "登录",
         "SignOut": "登出",
+        "ChangePassword": "修改密码",
         "AddSector": "增加板块",
         "DeleteSector": "删除板块",
         "Edit": "编辑",
@@ -48,14 +63,19 @@
         "DeleteSerie": "删除系列",
         "EditSerie": "编辑系列",
         "Add": "新增",
-        "Delete": "删除"
+        "Delete": "删除",
+        "SettingArea": "设置区域"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",
         "LoginTitle": "电声销售数据分析系统",
         "LoginSubtitle": "一款让数据更加清楚简洁的系统",
-        "Username": "请输入用户登录名",
-        "Password": "请输入登录密码",
+        "PleaseEnterTheUserLoginName": "请输入用户登录名",
+        "PleaseEnterTheLoginPassword": "请输入登录密码",
+        "PleaseEnterTheOriginalPassword": "请输入原有密码",
+        "PleaseEnterThePassword": "请输入密码",
+        "PleaseEnterThePasswordAgain": "请再次输入密码",
+        "TwoPasswordsAreInconsistent": "两次输入密码不一致",
         "PleaseEnterTheName": "请输入名称",
         "PleaseEnterTheCode": "请输入代码",
         "PleaseEnterTheCorrectPrice": "请输入正确的价格",

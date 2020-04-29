@@ -51,7 +51,6 @@
                 </el-table>
 
                 <el-pagination
-                    class="pagination"
                     @current-change="handleCurrentChange"
                     :current-page.sync="pagination.currentPage"
                     :page-size="pagination.pageSize"
@@ -157,7 +156,7 @@
                     code: "",
                     comment: "",
                     name: "",
-                    price: 1.1,
+                    price: "",
                     unit: ""
                 },
                 gotoSector: {
@@ -245,8 +244,12 @@
                 this.product.dialog.title = this.$t("Title.Add");
                 this.productForm.seriesId = this.serie.data.id;
                 this.productForm.id = "";
+                this.productForm.price = "";
                 this.product.dialog.visible = true;
                 this.product.dialog.mode = "Add";
+                setTimeout(() => {
+                    this.$refs.productForm.clearValidate();
+                })
             },
             editProduct() {
                 this.product.dialog.title = this.$t("Title.Edit");

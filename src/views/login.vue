@@ -7,13 +7,13 @@
 
             <h5>{{$t("Message.LoginSubtitle")}}</h5>
 
-            <el-input :placeholder="$t('Message.Username')" v-model="username" class="login-input username-input">
+            <el-input :placeholder="$t('Message.PleaseEnterTheUserLoginName')" v-model="username" class="login-input username-input">
                 <template slot="prepend">
                     <i class="el-icon-user"></i>
                 </template>
             </el-input>
 
-            <el-input :placeholder="$t('Message.Password')" v-model="password" show-password class="login-input password-input">
+            <el-input :placeholder="$t('Message.PleaseEnterTheLoginPassword')" v-model="password" show-password class="login-input password-input">
                 <template slot="prepend">
                     <i class="el-icon-lock"></i>
                 </template>
@@ -49,7 +49,7 @@
                 }).then((response) => {
                     const AUTH_TOKEN = "Bearer " + response.token;
                     sessionStorage.setItem('token', AUTH_TOKEN);
-                    sessionStorage.setItem('username', _self.username);
+                    sessionStorage.setItem('userName', response.userName);
                     _self.$router.push('home');
                 })
             }
