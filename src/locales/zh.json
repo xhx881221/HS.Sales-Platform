@@ -101,6 +101,7 @@
         "PleaseEnterTheLoginName": "请输入登录名",
         "PleaseEnterTheCorrectPhoneNumber": "请输入正确的电话号码",
         "PleaseEnterTheCorrectAge": "请输入正确的年龄",
-        "PleaseEnterTheCorrectQQ": "请输入正确的QQ号码"
+        "PleaseEnterTheCorrectQQ": "请输入正确的QQ号码",
+        "PleaseEnterTheCorrectMailBox": "请输入正确的邮箱"
     }
 }

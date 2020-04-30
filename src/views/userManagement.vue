@@ -128,6 +128,14 @@
                 }
             }
 
+            let validate_mail = (rule, value, callback) => {
+                if (value.indexOf("@") !== -1 || value === "") {
+                    callback()
+                } else {
+                    callback(new Error(this.$t("Message.PleaseEnterTheCorrectMailBox")));
+                }
+            }
+
             const validate_qq = (rule, value, callback) => {
                 if (/^[1-9][0-9]{4,}$/.test(value) || value === "") {
                     callback()
