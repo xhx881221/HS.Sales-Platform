@@ -38,7 +38,7 @@
         <el-dialog :title="dialog.title" :visible.sync="dialog.visible" :close-on-click-modal=false :before-close="closeDialog" top="248px" width="774px">
             <el-form ref="sectorForm" :rules="sectorFormRules" :model="sectorForm">
                 <el-form-item :label="$t('Form.SectorName')" label-width="154px" prop="name">
-                    <el-input v-model="sectorForm.name" autocomplete="off"></el-input>
+                    <el-input v-model="sectorForm.name"></el-input>
                 </el-form-item>
             </el-form>
 
@@ -202,6 +202,7 @@
     .content {
         padding: 22px 34px;
         height: calc(100% - 44px);
+        box-shadow: 0px 1px 6px 0px rgba(59,59,59,0.3);
     }
 
     .operate-area {

@@ -16,7 +16,9 @@
         "SalesCompany": "销售公司",
         "Top20": "前20",
         "Last30": "后30",
-        "ChangePassword": "修改密码"
+        "ChangePassword": "修改密码",
+        "AddUser": "新增用户",
+        "EditUser": "编辑用户"
     },
     "Function": {
         "DataEntry": "数据录入",
@@ -37,7 +39,13 @@
         "Unit": "单位：",
         "OriginalPassword": "原有密码：",
         "NewPassword": "新密码：",
-        "ConfirmPassword": "确认新密码："
+        "ConfirmPassword": "确认新密码：",
+        "FullName": "姓名：",
+        "LoginName": "登录名：",
+        "CellPhone": "手机：",
+        "LoginPassword": "登录密码：",
+        "Mailbox": "邮箱：",
+        "Age": "年龄："
     },
     "Table": {
         "ModelCode": "型号代码",
@@ -45,7 +53,11 @@
         "Price": "价格",
         "Remarks": "备注",
         "Unit": "单位",
-        "FullName": "姓名"
+        "FullName": "姓名",
+        "LoginName": "登录名",
+        "Age": "年龄",
+        "Mailbox": "邮箱",
+        "CellPhone": "手机"
     },
     "Button": {
         "Login": "登录",
@@ -64,7 +76,8 @@
         "EditSerie": "编辑系列",
         "Add": "新增",
         "Delete": "删除",
-        "SettingArea": "设置区域"
+        "SettingArea": "设置区域",
+        "Inquiry": "查询"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",
@@ -83,6 +96,11 @@
         "SuccessfullySaved": "保存成功",
         "PleaseConfirmWhetherToDelete": "请确定是否删除?",
         "SuccessfullyDeleted": "删除成功",
-        "Series": "系列"
+        "Series": "系列",
+        "PleaseEnterTheFullName": "请输入姓名",
+        "PleaseEnterTheLoginName": "请输入登录名",
+        "PleaseEnterTheCorrectPhoneNumber": "请输入正确的电话号码",
+        "PleaseEnterTheCorrectAge": "请输入正确的年龄",
+        "PleaseEnterTheCorrectQQ": "请输入正确的QQ号码"
     }
 }

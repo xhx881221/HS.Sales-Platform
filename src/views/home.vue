@@ -43,15 +43,15 @@
 		<el-dialog :title="$t('Title.ChangePassword')" :visible.sync="dialogVisible" :close-on-click-modal=false :before-close="closeDialog" top="248px" width="774px">
             <el-form ref="ruleForm" :rules="submitFormRules" :model="ruleForm">
                 <el-form-item :label="$t('Form.OriginalPassword')" :label-width="labelWidth" prop="oldPassword">
-                    <el-input v-model="ruleForm.oldPassword" autocomplete="off" show-password></el-input>
+                    <el-input v-model="ruleForm.oldPassword" show-password></el-input>
                 </el-form-item>
 
 				<el-form-item :label="$t('Form.NewPassword')" :label-width="labelWidth" prop="password">
-                    <el-input v-model="ruleForm.password" autocomplete="off" show-password></el-input>
+                    <el-input v-model="ruleForm.password" show-password></el-input>
                 </el-form-item>
 
 				<el-form-item :label="$t('Form.ConfirmPassword')" :label-width="labelWidth" prop="checkPassword">
-                    <el-input v-model="ruleForm.checkPassword" autocomplete="off" show-password></el-input>
+                    <el-input v-model="ruleForm.checkPassword" show-password></el-input>
                 </el-form-item>
             </el-form>
 
@@ -310,6 +310,10 @@
 		width: 48px; height: 48px;
 		line-height: 48px
 	}
+
+	.search-area .el-form-item__label {
+        padding: 0;
+    }
 
 	#home .el-dropdown {
 		vertical-align: top;

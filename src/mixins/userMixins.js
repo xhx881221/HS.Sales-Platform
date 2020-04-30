@@ -36,7 +36,8 @@ export const userMixin = {
             },
             tableCellStyle: {
                 "padding": "0"
-            }
+            },
+            searchParam: ""
         }
     },
     methods: {

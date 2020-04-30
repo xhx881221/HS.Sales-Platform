@@ -1,8 +1,8 @@
 <template>
     <div id="seriesManagement">
         <contentHeader :title="sectorName" :button="gotoSector" @goback="gotoSectorManagement"></contentHeader>
+        
         <div class="content">
-
             <div class="series-operate">
                 <h3 class="series-operate__title">{{sectorName + $t("Message.Series")}}</h3>
 
@@ -63,7 +63,7 @@
         <el-dialog :title="serie.dialog.title" :visible.sync="serie.dialog.visible" :close-on-click-modal=false :before-close="closeSerieDialog" top="248px" width="774px">
             <el-form ref="serieForm" :rules="submitFormRules" :model="serieForm" class="serie-form">
                 <el-form-item :label="$t('Form.SerieName')" label-width="154px" prop="name">
-                    <el-input v-model="serieForm.name" autocomplete="off"></el-input>
+                    <el-input v-model="serieForm.name"></el-input>
                 </el-form-item>
             </el-form>
 
@@ -77,21 +77,21 @@
                 <el-row>
                     <el-col :span="12">
                         <el-form-item :label="$t('Form.ModelCode')" :label-width="labelWidth" prop="code">
-                            <el-input v-model="productForm.code" autocomplete="off"></el-input>
+                            <el-input v-model="productForm.code"></el-input>
                         </el-form-item>
 
                         <el-form-item :label="$t('Form.Price')" :label-width="labelWidth" prop="price">
-                            <el-input v-model.number="productForm.price" autocomplete="off"></el-input>
+                            <el-input v-model.number="productForm.price"></el-input>
                         </el-form-item>
                     </el-col>
 
                     <el-col :span="12">
                         <el-form-item :label="$t('Form.Name')" :label-width="labelWidth" prop="name">
-                            <el-input v-model="productForm.name" autocomplete="off"></el-input>
+                            <el-input v-model="productForm.name"></el-input>
                         </el-form-item>
 
                         <el-form-item :label="$t('Form.Unit')" :label-width="labelWidth" prop="unit">
-                            <el-input v-model="productForm.unit" autocomplete="off"></el-input>
+                            <el-input v-model="productForm.unit"></el-input>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -99,7 +99,7 @@
                 <el-row>
                     <el-col :span="24">
                         <el-form-item :label="$t('Form.Remarks')" :label-width="labelWidth" prop="comment">
-                            <el-input v-model="productForm.comment" autocomplete="off"></el-input>
+                            <el-input v-model="productForm.comment"></el-input>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -273,6 +273,7 @@
                             message: _self.$t("Message.SuccessfullyDeleted"),
                             type: 'success'
                         });
+                        _self.pagination.currentPage = 1;
                         _self.getProducts();
                     })
                 })
@@ -295,7 +296,8 @@
                                 type: 'success'
                             });
                             _self.$refs[formName].resetFields();
-                            _self.getAllSeries();
+                            _self.pagination.currentPage = 1;
+                            _self.getProducts();
                             _self.product.dialog.visible = false;
                         })
                     }
@@ -378,6 +380,7 @@
         height: calc(100% - 32px - 56px);
         width: calc(100% - 24px);
         background-color: #ffffff;
+        box-shadow: 0px 1px 6px 0px rgba(59,59,59,0.3);
     }
 
     .series-operate, .products-table {
