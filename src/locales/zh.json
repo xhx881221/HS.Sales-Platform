@@ -18,7 +18,9 @@
         "Last30": "后30",
         "ChangePassword": "修改密码",
         "AddUser": "新增用户",
-        "EditUser": "编辑用户"
+        "EditUser": "编辑用户",
+        "ManualEntry": "手动录入",
+        "ExcelImport": "表格导入"
     },
     "Function": {
         "DataEntry": "数据录入",
@@ -45,7 +47,12 @@
         "CellPhone": "手机：",
         "LoginPassword": "登录密码：",
         "Mailbox": "邮箱：",
-        "Age": "年龄："
+        "Age": "年龄：",
+        "Month": "月份：",
+        "Area": "区域：",
+        "SalesCompany": "销售公司：",
+        "Sector": "板块：",
+        "ExcelImport": "表格导入："
     },
     "Table": {
         "ModelCode": "型号代码",
@@ -57,7 +64,17 @@
         "LoginName": "登录名",
         "Age": "年龄",
         "Mailbox": "邮箱",
-        "CellPhone": "手机"
+        "CellPhone": "手机",
+        "SeriesName": "系列名称",
+        "ProductModelCode": "产品型号代码",
+        "ProductName": "产品名称",
+        "UnitPrice": "单价",
+        "Quantity": "数量",
+        "Amount": "金额",
+        "Date": "日期",
+        "SalesCompany": "销售公司",
+        "ProductCode": "产品代码",
+        "Amount/Yuan": "金额/元"
     },
     "Button": {
         "Login": "登录",
@@ -77,7 +94,8 @@
         "Add": "新增",
         "Delete": "删除",
         "SettingArea": "设置区域",
-        "Inquiry": "查询"
+        "Inquiry": "查询",
+        "Select": "选择"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",
@@ -102,6 +120,9 @@
         "PleaseEnterTheCorrectPhoneNumber": "请输入正确的电话号码",
         "PleaseEnterTheCorrectAge": "请输入正确的年龄",
         "PleaseEnterTheCorrectQQ": "请输入正确的QQ号码",
-        "PleaseEnterTheCorrectMailBox": "请输入正确的邮箱"
+        "PleaseEnterTheCorrectMailBox": "请输入正确的邮箱",
+        "OnlyXlsXlsxFormat": "仅限xls，xlsx格式",
+        "PleaseUploadTheExcelInTheCorrectFormat": "请上传xls\\xlsx格式的模板表格",
+        "PleaseWaitWhileUploading": "上传中, 请稍后..."
     }
 }
