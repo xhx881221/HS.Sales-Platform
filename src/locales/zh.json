@@ -123,6 +123,7 @@
         "PleaseEnterTheCorrectMailBox": "请输入正确的邮箱",
         "OnlyXlsXlsxFormat": "仅限xls，xlsx格式",
         "PleaseUploadTheExcelInTheCorrectFormat": "请上传xls\\xlsx格式的模板表格",
-        "PleaseWaitWhileUploading": "上传中, 请稍后..."
+        "PleaseWaitWhileUploading": "上传中, 请稍后...",
+        "UploadFailed": "上传失败"
     }
 }

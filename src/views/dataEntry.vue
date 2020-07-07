@@ -80,14 +80,14 @@
                                 ref="upload"
                                 class="upload"
                                 accept="application/x-xls, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                :headers="excel.headers"
                                 :action="excel.uploadURL"
                                 :file-list="excel.fileList"
                                 :show-file-list="false"
                                 :on-success="uploaderSuccess"
                                 :on-error="uploaderError"
-                                :on-change="uploaderChange"
-                                :auto-upload="false">
-                                <el-button type="primary" @click="submitUpload">{{$t("Button.Select")}}</el-button>
+                                :before-upload="beforeUpload">
+                                <el-button type="primary">{{$t("Button.Select")}}</el-button>
                             </el-upload>
                             <span class="upload-tooltips">
                                 <span class="upload-icon">*</span>
@@ -147,6 +147,9 @@
                     tableData: []
                 },
                 excel: {
+                    headers: {
+                        Authorization: sessionStorage.getItem("token")
+                    },
                     loading: false,
                     uploadURL: "",
                     tableData: [],
@@ -156,9 +159,10 @@
             }
         },
         methods: {
-            uploaderChange(file) {
+            beforeUpload(file) {
                 let _self = this;
                 if (/(.xls|.xlsx)$/.test(file.name)) {
+                    this.excel.loading = true;
                     this.excel.fileList = [].concat(file);
                 } else {
                     this.excel.fileList = [];
@@ -166,6 +170,7 @@
                         message: this.$t("Message.PleaseUploadTheExcelInTheCorrectFormat"),
                         type: 'error'
                     });
+                    return false;
                 }
             },
             uploaderSuccess(response) {
@@ -190,14 +195,6 @@
                     type: 'error',
                 });
                 this.excel.loading = false;
-            },
-            submitUpload() {
-                this.$refs.upload.submit();
-                this.excel.loading = true;
-                if (this.$refs.upload.uploadFiles[0].response) {
-                    this.excel.tableData = [];
-                    this.uploaderSuccess(this.$refs.upload.uploadFiles[0].response);
-                }
             },
             save() {
                 let _self = this;
