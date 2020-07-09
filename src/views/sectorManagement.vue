@@ -202,7 +202,6 @@
     .content {
         padding: 22px 34px;
         height: calc(100% - 44px);
-        box-shadow: 0px 1px 6px 0px rgba(59,59,59,0.3);
     }
 
     .operate-area {
