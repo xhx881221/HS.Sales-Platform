@@ -96,7 +96,11 @@
         "Delete": "删除",
         "SettingArea": "设置区域",
         "Inquiry": "查询",
-        "Select": "选择"
+        "Select": "选择",
+        "AddArea": "增加区域",
+        "DeleteArea": "删除区域",
+        "EditArea": "编辑区域",
+        "PlanSettings": "计划设置"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",

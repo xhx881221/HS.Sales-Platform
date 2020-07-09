@@ -6,11 +6,11 @@
             <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4" class="content-left">
                 <h3>{{$t("Function.AreaDetails")}}</h3>
 
-                <div>
-                    <el-button type="primary" @click="addUser" size="medium" icon="el-icon-plus" class="radius-button">{{$t("Button.Add")}}</el-button>
-                    <el-button type="danger" @click="addUser" size="medium" icon="el-icon-circle-plus-outline" class="radius-button">{{$t("Button.Add")}}</el-button>
-                    <el-button type="success" @click="addUser" size="medium" icon="el-icon-circle-plus-outline" class="radius-button">{{$t("Button.Add")}}</el-button>
-                    <el-button type="warning" @click="addUser" size="medium" icon="el-icon-circle-plus-outline" class="radius-button">{{$t("Button.Add")}}</el-button>
+                <div class="operate-area">
+                    <el-button type="primary" @click="addArea" size="medium" icon="el-icon-plus" class="radius-button">{{$t("Button.AddArea")}}</el-button>
+                    <el-button type="danger" @click="deleteArea" size="medium" icon="el-icon-close" class="radius-button">{{$t("Button.DeleteArea")}}</el-button>
+                    <el-button type="success" @click="editArea" size="medium" icon="el-icon-edit" class="radius-button">{{$t("Button.EditArea")}}</el-button>
+                    <el-button type="warning" @click="planSettings" size="medium" icon="el-icon-setting" class="radius-button">{{$t("Button.PlanSettings")}}</el-button>
                 </div>
 
                 <el-tree
@@ -103,6 +103,10 @@
     h3 {
         font-size: 16px;
         font-weight: 400;
+    }
+
+    .content-left .operate-area {
+        
     }
 
     .content-right {
