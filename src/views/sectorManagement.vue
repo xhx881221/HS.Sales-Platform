@@ -36,7 +36,7 @@
         </div>
 
         <el-dialog :title="dialog.title" :visible.sync="dialog.visible" :close-on-click-modal=false :before-close="closeDialog" top="248px" width="774px">
-            <el-form ref="sectorForm" :rules="sectorFormRules" :model="sectorForm">
+            <el-form ref="sectorForm" :rules="submitFormRules" :model="sectorForm">
                 <el-form-item :label="$t('Form.SectorName')" label-width="154px" prop="name">
                     <el-input v-model="sectorForm.name"></el-input>
                 </el-form-item>

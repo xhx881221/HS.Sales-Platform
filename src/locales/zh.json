@@ -20,7 +20,12 @@
         "AddUser": "新增用户",
         "EditUser": "编辑用户",
         "ManualEntry": "手动录入",
-        "ExcelImport": "表格导入"
+        "ExcelImport": "表格导入",
+        "AddArea": "新增区域",
+        "EditArea": "编辑区域",
+        "AreaPlanSetting": "计划设置",
+        "AddCompany": "新增公司",
+        "EditCompany": "编辑公司"
     },
     "Function": {
         "DataEntry": "数据录入",
@@ -30,7 +35,8 @@
         "ReportQuery": "报表查询",
         "ProductSettings": "产品设置",
         "ConfirmationInformation": "确认信息",
-        "AreaDetails": "区域详情"
+        "AreaDetails": "区域详情",
+        "SalesCompanyPlanSettings": "销售公司计划设置"
     },
     "Form": {
         "SectorName": "板块名称：",
@@ -53,7 +59,11 @@
         "Area": "区域：",
         "SalesCompany": "销售公司：",
         "Sector": "板块：",
-        "ExcelImport": "表格导入："
+        "ExcelImport": "表格导入：",
+        "AreaName": "区域名称：",
+        "Years": "年份：",
+        "AmountOfTargetArea": "区域目标额度：",
+        "CompanyName": "公司名称："
     },
     "Table": {
         "ModelCode": "型号代码",
@@ -75,7 +85,8 @@
         "Date": "日期",
         "SalesCompany": "销售公司",
         "ProductCode": "产品代码",
-        "Amount/Yuan": "金额/元"
+        "Amount/Yuan": "金额/元",
+        "CompanyName": "公司名称"
     },
     "Button": {
         "Login": "登录",
@@ -100,7 +111,8 @@
         "AddArea": "增加区域",
         "DeleteArea": "删除区域",
         "EditArea": "编辑区域",
-        "PlanSettings": "计划设置"
+        "PlanSettings": "计划设置",
+        "CompanyPlanSettings": "公司计划设置"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",
@@ -130,6 +142,7 @@
         "PleaseUploadTheExcelInTheCorrectFormat": "请上传xls\\xlsx格式的模板表格",
         "PleaseWaitWhileUploading": "上传中, 请稍后...",
         "UploadFailed": "上传失败",
-        "AreaList": "区域列表"
+        "AreaList": "区域列表",
+        "PleaseEnterTheAmount": "请输入额度"
     }
 }

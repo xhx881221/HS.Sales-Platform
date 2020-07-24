@@ -263,6 +263,13 @@
                 this.pagination.currentPage = 1;
                 this.getAllUsers();
             },
+            handleCurrentChange(val) {
+                this.pagination.currentPage = val;
+                if (this.searchParam !== "") {
+                    this.searchParam.page = val;
+                }
+                this.getAllUsers();
+            },
             getAllUsers() {
                 let _self = this;
                 let _param = this.searchParam === "" ? {

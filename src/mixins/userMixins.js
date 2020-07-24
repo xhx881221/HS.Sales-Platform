@@ -21,7 +21,8 @@ export const userMixin = {
                 name: [{required: true, message: this.$t("Message.PleaseEnterTheName"), trigger: ['blur', 'change']}],
                 code: [{required: true, message: this.$t("Message.PleaseEnterTheCode"), trigger: ['blur', 'change']}],
                 price: [{required: true, validator: validate_price, trigger: ['blur', 'change']}],
-                unit: [{required: true, validator: validate_unit, trigger: ['blur', 'change']}]
+                unit: [{required: true, validator: validate_unit, trigger: ['blur', 'change']}],
+                amount: [{required: true, message: this.$t("Message.PleaseEnterTheAmount"), trigger: ['blur', 'change']}],
             },
             multipleSelection: [],
             pagination: {
