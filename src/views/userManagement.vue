@@ -230,7 +230,9 @@
             selectUser(row, column) {
                 this.$refs.tableData.toggleRowSelection(row);
             },
-            settingArea() {},
+            settingArea() {
+                
+            },
             deleteUser() {
                 let _self = this;
                 this.$confirm(this.$t("Message.PleaseConfirmWhetherToDelete"), this.$t("Function.ConfirmationInformation"), {

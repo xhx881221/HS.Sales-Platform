@@ -36,7 +36,9 @@
         "ProductSettings": "产品设置",
         "ConfirmationInformation": "确认信息",
         "AreaDetails": "区域详情",
-        "SalesCompanyPlanSettings": "销售公司计划设置"
+        "SalesCompanyPlanSettings": "销售公司计划设置",
+        "OutstandingProductSettings": "绩优产品设置",
+        "UnderperformanceProductSettings": "绩差产品设置"
     },
     "Form": {
         "SectorName": "板块名称：",
@@ -63,7 +65,11 @@
         "AreaName": "区域名称：",
         "Years": "年份：",
         "AmountOfTargetArea": "区域目标额度：",
-        "CompanyName": "公司名称："
+        "CompanyName": "公司名称：",
+        "ContinuousGrowthMonths": "连续增长月数：",
+        "MonthlyGrowthRate": "每月增长率：",
+        "ContinuousReductionMonths": "连续减少月数：",
+        "MonthlyReductionRate": "每月减少率："
     },
     "Table": {
         "ModelCode": "型号代码",
