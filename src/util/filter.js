@@ -7,7 +7,7 @@ let percentage = function (content) {
 	if (!content) {
 		return content
 	} else {
-		`${content}%`
+		return `${content}%`
 	}
 };
 
