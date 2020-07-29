@@ -56,7 +56,7 @@
             </el-pagination>
         </div>
 
-        <el-dialog :title="dialogTitle" :visible.sync="dialogVisible" :close-on-click-modal=false :before-close="closeDialog" top="248px" width="774px" class="dialog-area">
+        <el-dialog :title="user.dialogTitle" :visible.sync="user.dialogVisible" :close-on-click-modal=false :before-close="closeUserDialog" top="248px" width="774px" class="dialog-area">
             <el-form ref="ruleForm" :rules="submitFormRules" :model="ruleForm">
                 <input type="password" style="z-index: -11; position: absolute;"/>
                 <el-row>
@@ -65,7 +65,7 @@
                             <el-input v-model="ruleForm.name"></el-input>
                         </el-form-item>
 
-                        <el-form-item :label="$t('Form.LoginPassword')" :label-width="labelWidth" prop="pwd" v-if="dialogMode === 'Add'">
+                        <el-form-item :label="$t('Form.LoginPassword')" :label-width="labelWidth" prop="pwd" v-if="user.dialogMode === 'Add'">
                             <el-input v-model="ruleForm.pwd" show-password></el-input>
                         </el-form-item>
 
@@ -79,7 +79,7 @@
                     </el-col>
 
                     <el-col :span="12">
-                        <el-form-item :label="$t('Form.LoginName')" :label-width="labelWidth" prop="code" v-if="dialogMode === 'Add'">
+                        <el-form-item :label="$t('Form.LoginName')" :label-width="labelWidth" prop="code" v-if="user.dialogMode === 'Add'">
                             <el-input v-model="ruleForm.code"></el-input>
                         </el-form-item>
 
@@ -97,6 +97,44 @@
             <div slot="footer" class="dialog-footer">
                 <el-button type="primary" @click="save('ruleForm')">{{$t("Button.Save")}}</el-button>
             </div>
+        </el-dialog>
+
+        <el-dialog :title="$t('Title.SetArea')" :visible.sync="area.dialogVisible" :close-on-click-modal=false :before-close="closeAreaDialog" top="100px" width="800px" class="area-dialog">
+            <div class="search-area" @keyup.enter="searchArea">
+                <el-form :inline="true" :model="area.searchForm">
+                    <el-form-item :label="$t('Form.FullName')">
+                        <el-input v-model="area.searchForm.name"></el-input>
+                    </el-form-item><!--
+
+                    --><el-form-item>
+                        <el-button type="primary" size="medium" @click="searchArea">{{$t("Button.Inquiry")}}</el-button>
+                    </el-form-item>
+                </el-form>
+            </div>
+
+            <el-table
+                ref="areaTableData"
+                :data="area.tableData"
+                border
+                :header-cell-style="tableHeaderCellStyle"
+                :cell-style="tableCellStyle">
+                <el-table-column prop="name" :label="$t('Table.CompanyName')" align="center" :resizable="false" show-overflow-tooltip></el-table-column>
+                <el-table-column prop="comment" :label="$t('Table.Remarks')" align="center" :resizable="false" show-overflow-tooltip></el-table-column>
+                <el-table-column prop="selected" :label="$t('Table.Status')" align="center" :resizable="false" show-overflow-tooltip>
+                    <template slot-scope="scope">
+                        <el-button type="text" v-show="!scope.row.selected" @click="changeArea(scope.$index, scope.row)" class="text-button">{{$t("Button.BindingArea")}}</el-button>
+                        <el-button type="text" v-show="scope.row.selected" @click="changeArea(scope.$index, scope.row)" class="text-button">{{$t("Button.Unbind")}}</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+
+            <el-pagination
+                @current-change="handleAreaCurrentChange"
+                :current-page.sync="area.pagination.currentPage"
+                :page-size="area.pagination.pageSize"
+                layout="prev, pager, next, total, jumper"
+                :total="area.pagination.total">
+            </el-pagination>
         </el-dialog>
     </div>
 </template>
@@ -151,9 +189,24 @@
                     mobile: ""
                 },
                 tableData: [],
-                dialogTitle: "",
-                dialogVisible: false,
-                dialogMode: "",
+                user: {
+                    dialogTitle: "",
+                    dialogVisible: false,
+                    dialogMode: ""
+                },
+                area: {
+                    dialogVisible: false,
+                    searchParam: "",
+                    searchForm: {
+                        areaName: ""
+                    },
+                    tableData: [],
+                    pagination: {
+                        currentPage: 1,
+                        pageSize: 10,
+                        total: 0
+                    },
+                },
                 labelWidth: "108px",
                 ruleForm: {
                     id: "",
@@ -179,21 +232,21 @@
         },
         methods: {
             addUser() {
-                this.dialogTitle = this.$t("Title.AddUser");
+                this.user.dialogTitle = this.$t("Title.AddUser");
                 this.ruleForm.id = "";
                 this.ruleForm.age = "";
-                this.dialogVisible = true;
-                this.dialogMode = "Add";
+                this.user.dialogVisible = true;
+                this.user.dialogMode = "Add";
                 setTimeout(() => {
                     this.$refs.ruleForm.resetFields();
                 })
             },
             editUser() {
-                this.dialogTitle = this.$t("Title.EditUser");
+                this.user.dialogTitle = this.$t("Title.EditUser");
                 this.ruleForm = JSON.parse(JSON.stringify(this.multipleSelection[0]));
                 this.ruleForm.age = 0 || this.ruleForm.age;
-                this.dialogVisible = true;
-                this.dialogMode = "Edit";
+                this.user.dialogVisible = true;
+                this.user.dialogMode = "Edit";
                 setTimeout(() => {
                     this.$refs.ruleForm.clearValidate();
                 })
@@ -204,9 +257,9 @@
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         _param = JSON.parse(JSON.stringify(_self.ruleForm));
-                        if (_self.dialogMode === 'Add') {
+                        if (_self.user.dialogMode === 'Add') {
                             _url = "/api/User/Add"
-                        } else if (_self.dialogMode === 'Edit') {
+                        } else if (_self.user.dialogMode === 'Edit') {
                             _url = "/api/User/Update"
                         }
 
@@ -218,12 +271,12 @@
                             _self.$refs[formName].resetFields();
                             _self.pagination.currentPage = 1;
                             _self.getAllUsers();
-                            _self.dialogVisible = false;
+                            _self.user.dialogVisible = false;
                         })
                     }
                 })
             },
-            closeDialog(done) {
+            closeUserDialog(done) {
                 this.$refs.ruleForm.resetFields();
                 done();
             },
@@ -231,7 +284,43 @@
                 this.$refs.tableData.toggleRowSelection(row);
             },
             settingArea() {
-                
+                this.getAllAreas();
+                this.area.dialogVisible = true;
+            },
+            changeArea(index, row) {
+                let _self = this;
+                let _param = {
+                    userId: this.multipleSelection[0].id,
+                    saleAreas: [{
+                        saleAreaId: row.id,
+                        isBindOper: !row.selected
+                    }]
+                }
+                this.$axios.post("/api/UserArea/Save", _param).then((response) => {
+                    _self.area.pagination.currentPage = 1;
+                    _self.getAllAreas();
+                })
+            },
+            searchArea() {
+                this.area.searchParam = {
+                    userId: this.multipleSelection[0].id,
+                    areaName: this.area.searchForm.name,
+                    page: 1,
+                    pageRowCount: this.area.pagination.pageSize,
+                };
+                this.area.pagination.currentPage = 1;
+                this.getAllAreas();
+            },
+            handleAreaCurrentChange(val) {
+                this.area.pagination.currentPage = val;
+                this.getAllAreas();
+            },
+            closeAreaDialog(done) {
+                this.area.searchForm.areaName = "";
+                this.area.tableData = [];
+                this.area.pagination.currentPage = 1;
+                this.area.pagination.total = 0;
+                done();
             },
             deleteUser() {
                 let _self = this;
@@ -272,6 +361,19 @@
                 }
                 this.getAllUsers();
             },
+            getAllAreas() {
+                let _self = this;
+                let _param = this.area.searchParam === "" ? {
+                    userId: this.multipleSelection[0].id,
+                    areaName: "",
+                    page: this.area.pagination.currentPage,
+                    pageRowCount: this.area.pagination.pageSize
+                } : this.area.searchParam;
+                this.$axios.post('/api/UserArea/QueryPage', _param).then((response) => {
+                    _self.area.tableData = response.pageData.slice(0);
+                    _self.area.pagination.total = response.totalCount;
+                })
+            },
             getAllUsers() {
                 let _self = this;
                 let _param = this.searchParam === "" ? {
@@ -308,6 +410,14 @@
 
     #userManagement .dialog-area .el-dialog__body {
         padding: 34px 62px 12px 10px;
+    }
+
+    #userManagement .area-dialog .el-dialog__body {
+        padding: 30px 20px;
+    }
+
+    #userManagement .text-button {
+        padding: 0;
     }
 </style>
 

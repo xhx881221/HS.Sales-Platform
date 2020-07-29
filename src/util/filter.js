@@ -3,4 +3,12 @@ let omitContent = function (content, length) {
 	return content.substring(0, length);
 };
 
-export { omitContent }
+let percentage = function (content) {
+	if (!content) {
+		return content
+	} else {
+		`${content}%`
+	}
+};
+
+export { omitContent, percentage }

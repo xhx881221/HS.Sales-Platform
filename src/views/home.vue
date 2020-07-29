@@ -326,6 +326,10 @@
 	#home .el-dialog__body {
 		padding: 42px 0 0 0;
 	}
+
+	.el-loading-mask {
+        z-index: 3000 !important;
+    }
 </style>
 
 <style scoped>

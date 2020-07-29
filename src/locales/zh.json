@@ -25,7 +25,8 @@
         "EditArea": "编辑区域",
         "AreaPlanSetting": "计划设置",
         "AddCompany": "新增公司",
-        "EditCompany": "编辑公司"
+        "EditCompany": "编辑公司",
+        "SetArea": "设置区域"
     },
     "Function": {
         "DataEntry": "数据录入",
@@ -69,7 +70,9 @@
         "ContinuousGrowthMonths": "连续增长月数：",
         "MonthlyGrowthRate": "每月增长率：",
         "ContinuousReductionMonths": "连续减少月数：",
-        "MonthlyReductionRate": "每月减少率："
+        "MonthlyReductionRate": "每月减少率：",
+        "StartAndEndMonths": "起止月份：",
+        "DeadlineMonth": "截止月份："
     },
     "Table": {
         "ModelCode": "型号代码",
@@ -92,7 +95,16 @@
         "SalesCompany": "销售公司",
         "ProductCode": "产品代码",
         "Amount/Yuan": "金额/元",
-        "CompanyName": "公司名称"
+        "CompanyName": "公司名称",
+        "Income": "收入",
+        "LastYearIncome": "去年同期收入",
+        "YoYGrowthRate": "同比增长率",
+        "TaskCompletionRate": "任务完成率",
+        "Sales": "销售额",
+        "CumulativeGrowth": "累计增长",
+        "Sort": "排名",
+        "ProductNumber": "产品型号",
+        "Status": "状态"
     },
     "Button": {
         "Login": "登录",
@@ -118,7 +130,10 @@
         "DeleteArea": "删除区域",
         "EditArea": "编辑区域",
         "PlanSettings": "计划设置",
-        "CompanyPlanSettings": "公司计划设置"
+        "CompanyPlanSettings": "公司计划设置",
+        "Empty": "清空",
+        "BindingArea": "绑定区域",
+        "Unbind": "解除绑定"
     },
     "Message": {
         "DesperatelyLoading": "拼命加载中",
@@ -149,6 +164,7 @@
         "PleaseWaitWhileUploading": "上传中, 请稍后...",
         "UploadFailed": "上传失败",
         "AreaList": "区域列表",
-        "PleaseEnterTheAmount": "请输入额度"
+        "PleaseEnterTheAmount": "请输入额度",
+        "To": "至"
     }
 }
